@@ -25,7 +25,7 @@ const Navbar = () => {
            <a href="#protocol" className="link-hover">Protokol</a>
          </div>
          <a href="#cta" className={`btn-magnetic px-6 py-2 rounded-full text-sm font-sans ${scrolled ? 'bg-accent text-white' : 'bg-primary text-dark'}`}>
-            <span className="relative z-10">Ro'yxatdan o'tish</span>
+            <span className="relative z-10">Auditorlikni boshlash</span>
          </a>
        </nav>
     </div>
@@ -50,27 +50,27 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative h-[100dvh] w-full flex items-end pb-24 px-6 md:px-12 bg-dark" ref={containerRef}>
+    <section className="relative h-[100dvh] w-full flex items-end pb-24 px-6 md:px-12 bg-dark overflow-hidden" ref={containerRef}>
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1518002171953-a080ee817e1f?auto=format&fit=crop&q=80" 
-          alt="Industrial architecture" 
-          className="w-full h-full object-cover opacity-60"
+          src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&q=80" 
+          alt="Industrial facility thermal scanner vibe" 
+          className="w-full h-full object-cover opacity-60 mix-blend-luminosity"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/60 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/30 to-transparent"></div>
       </div>
       
       <div className="relative z-10 w-full max-w-6xl mx-auto">
         <h1 className="flex flex-col gap-2">
-          <span className="hero-elem font-sans font-bold text-3xl md:text-5xl text-primary uppercase tracking-tight">Quring va optimallashtiring</span>
-          <span className="hero-elem font-serif italic text-6xl md:text-8xl lg:text-[10rem] text-accent leading-none tracking-tighter pr-4">Energiya tizimini.</span>
+          <span className="hero-elem font-sans font-bold text-3xl md:text-5xl text-accent uppercase tracking-tight">Energiya oqimini</span>
+          <span className="hero-elem font-serif italic text-6xl md:text-8xl lg:text-[10rem] text-dark leading-none tracking-tighter pr-4">Boshqarish protokoli.</span>
         </h1>
-        <p className="hero-elem mt-8 text-primary/80 font-mono text-sm max-w-md leading-relaxed">
-          Sanoat korxonalari va bino energiya samaradorligi bo‘yicha milliy sertifikatlash markazi. Xalqaro standartlar va akademik amaliyot.
+        <p className="hero-elem mt-8 text-dark/80 font-mono text-sm max-w-md leading-relaxed font-bold">
+          Sanoat va bino energiya samaradorligini tahlil qilish bo‘yicha professional auditorlarni tayyorlashning eng yuqori standarti.
         </p>
         <div className="hero-elem mt-10">
           <a href="#cta" className="btn-magnetic bg-accent text-white px-8 py-4 rounded-full text-lg shadow-xl shadow-accent/20">
-            <span className="relative z-10 flex items-center gap-2">Saralashda qatnashish <ChevronRight size={20} /></span>
+            <span className="relative z-10 flex items-center gap-2">Professional auditorlikni boshlash <ChevronRight size={20} /></span>
           </a>
         </div>
       </div>
@@ -80,9 +80,9 @@ const Hero = () => {
 
 const Card1 = () => {
   const [items, setItems] = useState([
-    "Sanoat korxonalari",
-    "Zamonaviy binolar",
-    "ASHRAE standartlari"
+    "Nasos stansiyalari",
+    "Bug' qozonlari",
+    "Elektr dvigatellar"
   ]);
 
   useEffect(() => {
@@ -100,8 +100,8 @@ const Card1 = () => {
   return (
     <div className="bg-primary border border-dark/10 rounded-3xl p-8 shadow-lg relative overflow-hidden flex flex-col justify-between h-[22rem]">
       <div>
-        <h3 className="font-sans font-bold text-2xl text-dark mb-2">Ikki Yo‘nalish</h3>
-        <p className="text-dark/70 text-sm font-mono">Chuqurlashtirilgan o‘quv modullari</p>
+        <h3 className="font-sans font-bold text-2xl text-dark mb-2 leading-tight">Diagnostik<br/>Aralashtirgich</h3>
+        <p className="text-dark/70 text-sm font-mono mt-2">Sanoat korxonalarining energiya auditi.</p>
       </div>
       <div className="relative h-40 mt-4">
         {items.map((item, i) => (
@@ -124,7 +124,7 @@ const Card1 = () => {
 }
 
 const Card2 = () => {
-  const text = "Obyektlarning real energiya modellarini yaratishni o‘rganish... TDTU baza simulyatsiyasi faollashtirildi... Analiz davom etmoqda...";
+  const text = "Termal qarshilik aniqlanmoqda... Infiltratsiya koeffitsiyenti: 0.24... Bino energiya pasporti shakllantirilmoqda... Analiz yakunlanmoqda...";
   const [displayed, setDisplayed] = useState("");
   
   useEffect(() => {
@@ -147,8 +147,8 @@ const Card2 = () => {
           <div className="w-2 h-2 rounded-full bg-accent animate-pulse"></div>
           <span className="text-xs font-mono text-accent font-bold uppercase">Jonli efir</span>
         </div>
-        <h3 className="font-sans font-bold text-2xl text-dark mb-2">Akademik Simulyatsiya</h3>
-        <p className="text-dark/70 text-sm font-mono">TDTU laboratoriya bazasi</p>
+        <h3 className="font-sans font-bold text-2xl text-dark mb-2 leading-tight">Telemetriya<br/>Yozuv Mashinkasi</h3>
+        <p className="text-dark/70 text-sm font-mono mt-2">Binolarning energiya auditi.</p>
       </div>
       <div className="bg-dark text-background p-5 rounded-2xl h-32 font-mono text-[11px] overflow-hidden relative shadow-inner">
         <p className="leading-relaxed">{displayed}<span className="inline-block w-1.5 h-3 bg-accent ml-1 animate-pulse"></span></p>
@@ -188,8 +188,8 @@ const Card3 = () => {
   return (
     <div className="bg-primary border border-dark/10 rounded-3xl p-8 shadow-lg relative overflow-hidden flex flex-col justify-between h-[22rem]" ref={containerRef}>
       <div>
-         <h3 className="font-sans font-bold text-2xl text-dark mb-2">Professional Status</h3>
-         <p className="text-dark/70 text-sm font-mono">Rasmiy hujjat va litsenziya</p>
+         <h3 className="font-sans font-bold text-2xl text-dark mb-2 leading-tight">Kursor Protokoli<br/>Rejalashtirgichi</h3>
+         <p className="text-dark/70 text-sm font-mono mt-2">O‘quv grafigi va litsenziyalash.</p>
       </div>
       <div className="mt-4 relative bg-background p-4 rounded-2xl">
         <div className="grid grid-cols-7 gap-1 mb-6">
@@ -200,7 +200,7 @@ const Card3 = () => {
           ))}
         </div>
         <div className="flex justify-end">
-          <div ref={buttonRef} className="bg-dark text-background text-xs font-mono font-bold py-2 px-4 rounded-full border border-dark">Sertifikat</div>
+          <div ref={buttonRef} className="bg-dark text-background text-[10px] uppercase font-mono font-bold py-2 px-4 rounded-full border border-dark">Sertifikat Olish</div>
         </div>
         <div ref={cursorRef} className="absolute top-0 left-0 text-dark z-10 drop-shadow-md">
           <MousePointer2 fill="#111111" size={24} />
@@ -233,7 +233,7 @@ const FeaturesSection = () => {
   return (
     <section id="features" className="py-32 px-6 md:px-12 bg-background" ref={containerRef}>
       <div className="max-w-6xl mx-auto">
-        <h2 className="font-sans font-bold text-4xl md:text-6xl text-dark mb-16 uppercase tracking-tight">Tizim<br/><span className="text-accent">Afzalliklari</span></h2>
+        <h2 className="font-sans font-bold text-4xl md:text-6xl text-dark mb-16 uppercase tracking-tight">Interaktiv<br/><span className="text-accent">Artefaktlar</span></h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="feature-card"><Card1 /></div>
           <div className="feature-card"><Card2 /></div>
@@ -267,7 +267,7 @@ const Philosophy = () => {
     return () => ctx.revert();
   }, []);
 
-  const statement = "xalqaro ASHRAE standartlariga asoslangan real energiya modellashtirish amaliyoti.".split(" ");
+  const statement = "Obyektlarning energetik DNKsini qayta shakllantirish va xalqaro standartlar asosida audit o‘tkazish.".split(" ");
 
   return (
     <section id="philosophy" className="relative py-40 px-6 md:px-12 bg-dark text-primary overflow-hidden" ref={containerRef}>
@@ -280,12 +280,12 @@ const Philosophy = () => {
       </div>
       <div className="relative z-10 max-w-5xl mx-auto">
         <p className="phil-text-1 font-mono text-sm md:text-base text-primary/60 mb-12 uppercase max-w-xl">
-          Ko'pchilik o'quv markazlari quyidagilarga e'tibor qaratadi: faqat nazariy bilimlarni berish va yuzaki tahlil.
+          Ko'pchilik energetika sohasi quyidagilarga e'tibor qaratadi: shunchaki resurslarni tejash va hisoblagichlarni kuzatish.
         </p>
         <h2 className="phil-text-2 font-serif italic text-4xl md:text-6xl lg:text-7xl leading-tight">
           Bizning asosiy e'tiborimiz: <br />
           {statement.map((word, i) => (
-             <span key={i} className={`inline-block mr-3 mt-4 ${word.includes('ASHRAE') || word.includes('real') ? 'text-accent font-sans not-italic font-bold uppercase' : ''}`}>{word}</span>
+             <span key={i} className={`inline-block mr-3 mt-4 ${word.includes('DNKsini') || word.includes('xalqaro') || word.includes('audit') ? 'text-accent font-sans not-italic font-bold uppercase' : ''}`}>{word}</span>
           ))}
         </h2>
       </div>
@@ -319,7 +319,7 @@ const Protocol = () => {
         });
       });
       
-      gsap.to(".gear-spin", { rotation: 360, repeat: -1, duration: 10, ease: "linear", transformOrigin: "center" });
+      gsap.to(".atom-spin", { rotation: 360, repeat: -1, duration: 15, ease: "linear", transformOrigin: "center" });
       gsap.to(".scanner-line", { y: 200, repeat: -1, yoyo: true, duration: 2, ease: "power1.inOut" });
       gsap.to(".pulse-path", { strokeDashoffset: 0, repeat: -1, duration: 3, ease: "linear" });
 
@@ -330,21 +330,25 @@ const Protocol = () => {
   const steps = [
     {
       num: "01",
-      title: "Saralash Bosqichi",
-      desc: "Nomzodlarning bazaviy muhandislik bilimlari va tahliliy qobiliyatlarini sinovdan o'tkazish.",
+      title: "Nazariy Gidratsiya",
+      desc: "ASHRAE va milliy standartlarni chuqur o‘rganish.",
       visual: (
          <svg viewBox="0 0 100 100" className="w-full h-full opacity-30 text-dark">
-           <circle cx="50" cy="50" r="35" stroke="currentColor" strokeWidth="2" fill="none" className="gear-spin" strokeDasharray="10 5" />
-           <circle cx="50" cy="50" r="20" stroke="currentColor" strokeWidth="2" fill="none" className="gear-spin" style={{animationDirection: 'reverse'}} strokeDasharray="5 5" />
+           <g className="atom-spin">
+             <ellipse cx="50" cy="50" rx="35" ry="12" stroke="currentColor" strokeWidth="2" fill="none" />
+             <ellipse cx="50" cy="50" rx="35" ry="12" stroke="currentColor" strokeWidth="2" fill="none" style={{transform: 'rotate(60deg)', transformOrigin: 'center'}} />
+             <ellipse cx="50" cy="50" rx="35" ry="12" stroke="currentColor" strokeWidth="2" fill="none" style={{transform: 'rotate(120deg)', transformOrigin: 'center'}} />
+             <circle cx="50" cy="50" r="6" fill="currentColor" />
+           </g>
          </svg>
       )
     },
     {
       num: "02",
-      title: "Simulyatsiya",
-      desc: "ASHRAE standartlari asosida obyektlarning real energiya modellarini yaratishni o‘rganish.",
+      title: "Simulyatsiya Fazasi",
+      desc: "Ebsilon va Matlab dasturlarida real obyektlar modellarini qurish.",
       visual: (
-        <div className="w-full h-full relative opacity-30 text-dark border border-current mt-10 h-4/5 rounded-xl overflow-hidden">
+        <div className="w-full h-full relative opacity-30 text-dark border border-current mt-10 h-4/5 rounded-xl overflow-hidden bg-dark/5">
           <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(currentColor 1px, transparent 1px), linear-gradient(90deg, currentColor 1px, transparent 1px)', backgroundSize: '20px 20px', opacity: 0.3}}></div>
           <div className="scanner-line absolute top-0 left-0 w-full h-1 bg-current shadow-[0_0_15px_currentColor]"></div>
         </div>
@@ -352,11 +356,11 @@ const Protocol = () => {
     },
     {
       num: "03",
-      title: "Sertifikatlash",
-      desc: "Imtihonni muvaffaqiyatli topshirish va professional auditor maqomini tasdiqlovchi rasmiy hujjatni olish.",
+      title: "Verifikatsiya",
+      desc: "Yakuniy imtihon va professional auditor sertifikatini olish.",
       visual: (
          <svg viewBox="0 0 100 100" className="w-full h-full opacity-30 text-dark">
-           <path d="M0 50 L30 50 L40 20 L60 80 L70 50 L100 50" stroke="currentColor" strokeWidth="2" fill="none" className="pulse-path" strokeDasharray="200" strokeDashoffset="200" />
+           <path d="M0 50 L30 50 L40 20 L60 80 L70 50 L100 50" stroke="currentColor" strokeWidth="3" fill="none" className="pulse-path" strokeDasharray="200" strokeDashoffset="200" />
          </svg>
       )
     }
@@ -365,7 +369,7 @@ const Protocol = () => {
   return (
     <section id="protocol" className="bg-background pt-20 pb-40" ref={containerRef}>
        <div className="max-w-6xl mx-auto px-6 md:px-12 mb-8">
-          <h2 className="font-sans font-bold text-4xl md:text-6xl text-dark uppercase tracking-tight">Akademiya<br/><span className="text-accent">Protokoli</span></h2>
+          <h2 className="font-sans font-bold text-4xl md:text-6xl text-dark uppercase tracking-tight">Yig'iluvchi<br/><span className="text-accent">Arxiv</span></h2>
        </div>
        <div className="relative">
          {steps.map((step, i) => (
@@ -394,13 +398,13 @@ const CallToAction = () => {
         <div className="absolute inset-0 bg-accent/20 blur-[120px] rounded-full transform scale-150"></div>
         <div className="relative z-10 flex flex-col items-center">
           <h2 className="font-serif italic text-4xl md:text-7xl text-primary mb-8 leading-tight">
-            Professional auditorlar <br/> korpusiga qo'shiling.
+            Professional auditorlik <br/> maqomini tasdiqlang.
           </h2>
           <p className="font-mono text-primary/70 mb-12 max-w-xl text-sm md:text-base">
-            Sanoat korxonalari va zamonaviy binolarning energiya samaradorligini tahlil qilish bo'yicha milliy sertifikatga ega bo'ling.
+            Obyektlarning energiya modellarini qurish va xalqaro audit o‘tkazish huquqini qo'lga kiriting.
           </p>
           <button className="btn-magnetic bg-accent text-white px-10 py-5 rounded-full text-xl shadow-2xl shadow-accent/40 font-sans tracking-wide">
-             <span className="relative z-10">Kursga ro'yxatdan o'tish va saralash</span>
+             <span className="relative z-10">Professional auditorlikni boshlash</span>
           </button>
         </div>
       </div>
@@ -426,9 +430,9 @@ const Footer = () => {
           <div>
             <h4 className="font-sans font-bold text-lg mb-6 text-white tracking-wide">Navigatsiya</h4>
             <ul className="flex flex-col gap-4 font-mono text-sm text-primary/60">
-               <li><a href="#features" className="hover:text-accent transition-colors">Afzalliklar</a></li>
-               <li><a href="#philosophy" className="hover:text-accent transition-colors">Falsafa</a></li>
-               <li><a href="#protocol" className="hover:text-accent transition-colors">Protokol</a></li>
+               <li><a href="#features" className="hover:text-accent transition-colors">Interaktiv Artefaktlar</a></li>
+               <li><a href="#philosophy" className="hover:text-accent transition-colors">Manifest</a></li>
+               <li><a href="#protocol" className="hover:text-accent transition-colors">Yig'iluvchi Arxiv</a></li>
             </ul>
           </div>
           <div>
